@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>大橙子</title>
+	<link rel="stylesheet" href="css/main.css">
+	<script>
+	window.onscroll = function()
+	{
+		var oMayun = document.getElementById('mayun');
+		var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+		Move(parseInt((document.documentElement.clientHeight - oMayun.offsetHeight)/2 + scrollTop));
+	}
+	var timer = null;
+	function Move(iTarget)
+	{
+		var oMayun = document.getElementById('mayun');
+		clearInterval(timer);
+		timer = setInterval(function(){
+			var speed = (iTarget - oMayun.offsetTop)/5;
+			if(speed>0)
+			{
+				speed = Math.ceil(speed);
+			}
+			else
+			{
+				speed = Math.floor(speed);
+			}
+			if(oMayun.offsetTop == iTarget)
+			{
+				clearInterval(timer);
+			}
+			else
+			{
+				oMayun.style.top = oMayun.offsetTop + speed + 'px';
+			}
+		},30)
+	}
+	</script>
+</head>
+<body>
+	<div id='mayun'></div>
+	<div class='header'>
+		<div class='header-container'>
+			<ul class='til'>
+				<li>2</li>
+				<li>0</li>
+				<li>1</li>
+				<li>6</li>
+			</ul>
+		</div>
+		<div class='logo'></div>
+	</div>
+	<div class='icon'>
+		<a href="">
+			<div class='weibo'></div>
+			我的微博
+		</a>
+		<a href="">
+			<div class='weibo'></div>
+			她的微博
+		</a>
+		<a href="">
+			<div class='weixin'></div>
+			我的微信
+		</a>
+		<a href="">
+			<div class='weibo'></div>
+			她的微博
+		</a>
+		<a href="">
+			<div class='weixin'></div>
+			我的微信
+		</a>
+	</div>
+	<div class='nav'>
+		<ul class='list'>
+			<li><a href="">首页</a></li>
+			<li><a href="">仿站</a></li>
+			<li><a href="">音乐</a></li>
+			<li><a href="">关于我</a></li>
+			<li><a href="">链接</a></li>
+			<li><a href="">技术</a></li>
+		</ul>
+	</div>
+	<div class='main'>
+		<div class='container'>
+			<div class='list2'>
+				<ul class='ul1'>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<div class='book'></div>
+			<!-- <div class='right'></div> -->
+		</div>
+	</div>
+</body>
+</html>
